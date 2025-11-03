@@ -38,12 +38,11 @@ class PrelimQuestionsSpec
 
   Feature("SDLT Filing frontend Task List Homepage") {
     Scenario("Hit the TaskList with no return id and is a business") {
-
       Given("I enter login using the Authority Wizard page")
       AuthWizard.login(HASDIRECT, Organisation)
-      When("User should be on the Before You Start page")
+      Then("User should be on the Before You Start page")
       BeforeYouStartPage.verifyPageTitle(BeforeYouStartPage.pageTitle)
-      And("User clicks on the continue button")
+      Then("User clicks on the continue button")
       BeforeYouStartPage.saveAndContinue()
       Then("User should be on Is the User and Individual Page")
       IndividualOrCompanyPage.verifyPageTitle(IndividualOrCompanyPage.pageTitle)
@@ -106,7 +105,7 @@ class PrelimQuestionsSpec
       BeforeYouStartPage.saveAndContinue()
       Then("User should be on Is the User and Individual Page")
       IndividualOrCompanyPage.verifyPageTitle(IndividualOrCompanyPage.pageTitle)
-      When("user clicks A Business Radio Button")
+      When("user clicks A Business Radio Button as a business")
       IndividualOrCompanyPage.radioButton(IndividualOrCompanyPage.individual)
       And("user clicks An Save and Continue Button")
       IndividualOrCompanyPage.saveAndContinue()
