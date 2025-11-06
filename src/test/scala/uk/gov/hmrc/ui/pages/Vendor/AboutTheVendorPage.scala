@@ -14,13 +14,17 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.ui.pages
+package uk.gov.hmrc.ui.pages.Vendor
 
-object BeforeYouStartPage extends BasePage {
+import uk.gov.hmrc.ui.pages.BasePage
 
-  override def pageUrl: String = "stamp-duty-land-tax-filing/preliminary-questions/before-you-start"
+object AboutTheVendorPage extends BasePage {
 
-  override def pageTitle: String =
-    "Before you start a new Stamp Tax return – Preliminary questions - Stamp Taxes Online - GOV.UK"
+  override def pageUrl: String = "about-the-vendor/before-you-start"
 
+  override def pageTitle: String = "Who is the vendor? – About the vendor - Stamp Taxes Online - GOV.UK"
+
+  def individual: String = "#value_1"
+
+  def business: String = "#value_0"
 }

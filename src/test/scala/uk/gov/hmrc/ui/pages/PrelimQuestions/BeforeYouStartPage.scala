@@ -14,13 +14,15 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.ui.pages
+package uk.gov.hmrc.ui.pages.PrelimQuestions
 
-object PurchasersNamePage extends BasePage {
+import uk.gov.hmrc.ui.pages.BasePage
 
-  override def pageUrl: String = "stamp-duty-land-tax-filing/purchaser/surname-or-company-name"
+object BeforeYouStartPage extends BasePage {
+
+  override def pageUrl: String = "stamp-duty-land-tax-filing/preliminary-questions/before-you-start"
 
   override def pageTitle: String =
-    "What is the purchaser’s name? - Preliminary questions - Stamp Taxes Online - GOV.UK"
+    "Before you start a new Stamp Tax return – Preliminary questions - Stamp Taxes Online - GOV.UK"
 
 }
