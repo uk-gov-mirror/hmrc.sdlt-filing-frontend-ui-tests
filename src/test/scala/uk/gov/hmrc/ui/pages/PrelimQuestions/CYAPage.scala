@@ -14,10 +14,11 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.ui.pages
+package uk.gov.hmrc.ui.pages.PrelimQuestions
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.ui.pages.PropertyAddress.click
+import uk.gov.hmrc.ui.pages.BasePage
+import PropertyAddress.click
 
 object CYAPage extends BasePage {
 
