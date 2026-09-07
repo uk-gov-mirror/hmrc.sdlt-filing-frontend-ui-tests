@@ -17,14 +17,21 @@
 package uk.gov.hmrc.ui.pages.Land
 
 import uk.gov.hmrc.ui.pages.BasePage
+import org.openqa.selenium.By
 
-object MineralsOrMineralRights extends BasePage {
+object SendingAPlan extends BasePage {
 
-  override def pageUrl: String = "about-the-land/minerals-or-mineral-rights"
+  override def pageUrl: String = "about-the-land/sending-a-plan"
 
-  override def pageTitle: String = "Minerals or mineral rights - About the land - Stamp Taxes Online - GOV.UK"
+  override def pageTitle: String =
+    "Sending a plan - About the land - Stamp Taxes Online - GOV.UK"
 
   val yes: String = "#value"
 
   val no: String = "#value-2"
+
+  def clickDropdownText(): Unit = driver.findElement(By.cssSelector("summary.govuk-details__summary")).click()
+
+  def dropdownText: String =
+    "The plan should indicate the scale used or be endorsed as ‘Not to Scale’. It must also show the return’s reference number, a description of the land and the local authority code."
 }

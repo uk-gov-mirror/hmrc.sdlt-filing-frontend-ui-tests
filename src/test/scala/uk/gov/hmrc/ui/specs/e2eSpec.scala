@@ -386,17 +386,17 @@ class e2eSpec
       AddNLPGUPRN.radioButton(AddNLPGUPRN.no)
       AddNLPGUPRN.saveAndContinue()
       Then("the SendingPlanByPost page is shown")
-      SendingPlanByPost.verifyPageTitle(SendingPlanByPost.pageTitle)
+      SendingAPlan.verifyPageTitle(SendingAPlan.pageTitle)
 
       When("the user confirms they will send a plan by post")
-      SendingPlanByPost.radioButton(SendingPlanByPost.yes)
-      SendingPlanByPost.saveAndContinue()
+      SendingAPlan.radioButton(SendingAPlan.yes)
+      SendingAPlan.saveAndContinue()
       Then("the MineralsOrMineralRights page is shown")
-      MineralsOrMineralRights.verifyPageTitle(MineralsOrMineralRights.pageTitle)
+      MineralRights.verifyPageTitle(MineralRights.pageTitle)
 
       When("the user confirms there are mineral or mineral rights reserved")
-      MineralsOrMineralRights.radioButton(MineralsOrMineralRights.yes)
-      MineralsOrMineralRights.saveAndContinue()
+      MineralRights.radioButton(MineralRights.yes)
+      MineralRights.saveAndContinue()
       Then("the LandCheckYourAnswers page is shown")
       LandCheckYourAnswers.verifyPageTitle(LandCheckYourAnswers.pageTitle)
 
