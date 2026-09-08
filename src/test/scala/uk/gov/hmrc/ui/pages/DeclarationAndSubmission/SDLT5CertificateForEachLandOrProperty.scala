@@ -23,7 +23,7 @@ object SDLT5CertificateForEachLandOrProperty extends BasePage {
   override def pageUrl: String = "submit-your-return/SDLT5-certificate-for-each-land-or-property"
 
   override def pageTitle: String =
-    "Do you want an SDLT5 certificate for each area of land or property? - Submit your return - Stamp Taxes Online - GOV.UK"
+    "Would you like an SDLT5 certificate for each area of land or property? - Submit your return - Stamp Taxes Online - GOV.UK"
 
   val yes: String = "#value"
 
