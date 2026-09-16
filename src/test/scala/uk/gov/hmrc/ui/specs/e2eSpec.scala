@@ -36,6 +36,7 @@ import uk.gov.hmrc.ui.pages.DeclarationAndSubmission.*
 import uk.gov.hmrc.ui.util.Users.LoginTypes.HASDIRECT
 import uk.gov.hmrc.ui.util.Users.UserTypes.Organisation
 import uk.gov.hmrc.ui.tags.*
+import uk.gov.hmrc.selenium.webdriver.Driver.instance
 
 class e2eSpec
     extends AnyFeatureSpec
@@ -865,9 +866,14 @@ class e2eSpec
       AuthWizard.login(
         HASDIRECT,
         Organisation,
-        returnId = Some("submission-complete-multiples")
+        returnId = Some("submitted")
       )
 
+      Then("the ReturnTaskList page is shown")
+      ReturnTaskList.verifyPageTitle(ReturnTaskList.pageTitle)
+
+      When("the user opens the submit your return questions")
+      ReturnTaskList.clickLinkById("task-list-link-submit-your-return")
       Then("the DeclarationAndSubmissionBeforeYouStart page is shown")
       DeclarationAndSubmissionBeforeYouStart.verifyPageTitle(DeclarationAndSubmissionBeforeYouStart.pageTitle)
 
@@ -885,12 +891,6 @@ class e2eSpec
       When("the user provides their email address")
       EnterEmailAddress.input(By.id(EnterEmailAddress.emailAddress), EnterEmailAddress.emailAddressInput)
       EnterEmailAddress.saveAndContinue()
-      Then("the SDLT5CertificateForEachLandOrProperty page is shown")
-      SDLT5CertificateForEachLandOrProperty.verifyPageTitle(SDLT5CertificateForEachLandOrProperty.pageTitle)
-
-      When("the user confirms to receive an sdlt5 certificate for each area of land")
-      SDLT5CertificateForEachLandOrProperty.radioButton(SDLT5CertificateForEachLandOrProperty.yes)
-      SDLT5CertificateForEachLandOrProperty.saveAndContinue()
       Then("the WhoAreYouSubmittingThisReturnFor page is shown")
       WhoAreYouSubmittingThisReturnFor.verifyPageTitle(WhoAreYouSubmittingThisReturnFor.pageTitle)
 
@@ -902,21 +902,21 @@ class e2eSpec
 
       When("the user has read the declaration and submits their return")
       DeclarationConfirmation.saveAndContinue()
-//      Then("the SubmissionComplete page is shown")
-//      SubmissionComplete.waitForPage()
-//      SubmissionComplete.verifyPageTitle(SubmissionComplete.pageTitle)
-//
-//      When("the user views their submitted sdlt return")
-//      SubmissionComplete.click(SubmissionComplete.submittedReturnLink)
-//      Then("the YourCompletedSDLTReturn page is shown")
-//      YourCompletedSDLTReturn.verifyPageTitle(YourCompletedSDLTReturn.submittedReturnPageTitle)
-//
-//      When("the user views their sdlt5 certificate")
-//      SubmissionComplete.navigateBackToPage()
-//      SubmissionComplete.verifyPageTitle(SubmissionComplete.pageTitle)
-//      SubmissionComplete.click(SubmissionComplete.sdlt5certificateLink)
-//      Then("the SubmissionReceiptAndSDLT5 page is shown")
-//      SubmissionReceiptAndSDLT5.switchToNewTabAndValidateTitle(SubmissionReceiptAndSDLT5.pageTitle)
+      Then("the SubmissionComplete page is shown")
+      SubmissionComplete.waitForPage()
+      SubmissionComplete.verifyPageTitle(SubmissionComplete.pageTitle)
+
+      When("the user views their submitted sdlt return")
+      SubmissionComplete.click(SubmissionComplete.submittedReturnLink)
+      Then("the YourCompletedSDLTReturn page is shown")
+      YourCompletedSDLTReturn.verifyPageTitle(YourCompletedSDLTReturn.submittedReturnPageTitle)
+
+      When("the user views their sdlt5 certificate")
+      SubmissionComplete.navigateBackToPage()
+      SubmissionComplete.verifyPageTitle(SubmissionComplete.pageTitle)
+      SubmissionComplete.click(SubmissionComplete.sdlt5certificateLink)
+      Then("the SubmissionReceiptAndSDLT5 page is shown")
+      SubmissionReceiptAndSDLT5.switchToNewTabAndValidateTitle(SubmissionReceiptAndSDLT5.pageTitle)
     }
   }
 }
