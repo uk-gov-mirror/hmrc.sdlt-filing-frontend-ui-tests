@@ -46,7 +46,7 @@ class TransactionQuestionsSpec
     ) {
 
       Given("the user is logged in through the AuthWizard page")
-      AuthWizard.login(HASDIRECT, Organisation, returnId = Some("prelimTransactionF"))
+      AuthWizard.login(HASDIRECT, Organisation, returnId = Some("prelim-only"))
 
       When("the user opens the transaction questions")
       ReturnTaskList.clickLinkById("task-list-link-about-the-transaction")
@@ -54,7 +54,7 @@ class TransactionQuestionsSpec
       TransactionBeforeYouStart.verifyPageTitle(TransactionBeforeYouStart.pageTitle)
 
       When("the user starts the transaction questions")
-      TransactionBeforeYouStart.saveAndContinue()
+      TransactionBeforeYouStart.clickContinueButton()
       Then("the ConfirmTypeOfTransaction page is shown")
       ConfirmTypeOfTransaction.verifyPageTitle(ConfirmTypeOfTransaction.pageTitle)
 
@@ -125,13 +125,6 @@ class TransactionQuestionsSpec
       When("the user confirms the purchaser is applying for a deferment")
       DeferringPayment.radioButton(DeferringPayment.yes)
       DeferringPayment.saveAndContinue()
-      Then("the UseOfLandOrProperty page is shown")
-      UseOfLandOrProperty.verifyPageTitle(UseOfLandOrProperty.pageTitle)
-
-      When("the user confirms the land is being used for an office and hotel")
-      UseOfLandOrProperty.checkbox(UseOfLandOrProperty.office, true)
-      UseOfLandOrProperty.checkbox(UseOfLandOrProperty.hotel, true)
-      UseOfLandOrProperty.saveAndContinue()
       Then("the SaleOfABusiness page is shown")
       SaleOfABusiness.verifyPageTitle(SaleOfABusiness.pageTitle)
 
@@ -317,7 +310,7 @@ class TransactionQuestionsSpec
       TransactionAddressLookup.verifyPageTitle(TransactionAddressLookup.editPageTitle)
       TransactionAddressLookup.enterAddressManually("523", "AGC", "TE11 1TS")
       TransactionAddressLookup.verifyPageTitle(TransactionAddressLookup.confirmPageTitle)
-      TransactionAddressLookup.clickSubmitButton()
+      TransactionAddressLookup.clickConfirmAddress()
       Then("the TransactionCheckYourAnswers page is shown")
       TransactionCheckYourAnswers.verifyPageTitle(TransactionCheckYourAnswers.pageTitle)
 
@@ -355,7 +348,7 @@ class TransactionQuestionsSpec
       TransactionBeforeYouStart.verifyPageTitle(TransactionBeforeYouStart.pageTitle)
 
       When("the user starts the transaction questions")
-      TransactionBeforeYouStart.saveAndContinue()
+      TransactionBeforeYouStart.clickContinueButton()
       Then("the ConfirmTypeOfTransaction page is shown")
       ConfirmTypeOfTransaction.verifyPageTitle(ConfirmTypeOfTransaction.pageTitle)
 
@@ -535,7 +528,7 @@ class TransactionQuestionsSpec
       TransactionAddressLookup.verifyPageTitle(TransactionAddressLookup.editPageTitle)
       TransactionAddressLookup.enterAddressManually("523", "AGC", "TE11 1TS")
       TransactionAddressLookup.verifyPageTitle(TransactionAddressLookup.confirmPageTitle)
-      TransactionAddressLookup.clickSubmitButton()
+      TransactionAddressLookup.clickConfirmAddress()
       Then("the ExercisingAnOption page is shown")
       ExercisingAnOption.verifyPageTitle(ExercisingAnOption.pageTitle)
 

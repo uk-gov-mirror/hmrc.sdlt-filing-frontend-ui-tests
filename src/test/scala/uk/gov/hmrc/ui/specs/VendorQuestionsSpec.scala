@@ -65,12 +65,12 @@ class VendorQuestionsSpec
 
       When("the user adds a new vendor")
       VendorOverview.radioButton(VendorOverview.yes)
-      VendorOverview.saveAndContinue()
+      VendorOverview.clickContinueButton()
       Then("the VendorBeforeYouStart page is shown")
       VendorBeforeYouStart.verifyPageTitle(VendorBeforeYouStart.pageTitle)
 
       When("the user starts the vendor questions")
-      VendorBeforeYouStart.saveAndContinue()
+      VendorBeforeYouStart.clickContinueButton()
       Then("the WhoIsTheVendor page is shown")
       WhoIsTheVendor.verifyPageTitle(WhoIsTheVendor.pageTitle)
 
@@ -103,7 +103,7 @@ class VendorQuestionsSpec
       VendorPropertyAddress.verifyPageTitle(VendorPropertyAddress.confirmPageTitleBusiness)
 
       When("the user confirms the vendor address")
-      VendorPropertyAddress.clickContinueButton()
+      VendorPropertyAddress.clickConfirmAddress()
       Then("the VendorCheckYourAnswers page is shown")
       VendorCheckYourAnswers.verifyPageTitle(VendorCheckYourAnswers.pageTitle)
 
@@ -133,7 +133,7 @@ class VendorQuestionsSpec
       VendorPropertyAddress.verifyPageTitle(VendorPropertyAddress.editPageTitleIndividual)
       VendorPropertyAddress.enterAddressManually("123", "TEST", "ZZ11 1ZZ")
       VendorPropertyAddress.verifyPageTitle(VendorPropertyAddress.confirmPageTitleIndividual)
-      VendorPropertyAddress.clickContinueButton()
+      VendorPropertyAddress.clickConfirmAddress()
       Then("the VendorCheckYourAnswers page is shown")
       VendorCheckYourAnswers.verifyPageTitle(VendorCheckYourAnswers.pageTitle)
 
@@ -158,12 +158,12 @@ class VendorQuestionsSpec
 
       When("the user adds a new vendor")
       VendorOverview.radioButton(VendorOverview.yes)
-      VendorOverview.saveAndContinue()
+      VendorOverview.clickContinueButton()
       Then("the VendorBeforeYouStart page is shown")
       VendorBeforeYouStart.verifyPageTitle(VendorBeforeYouStart.pageTitle)
 
       When("the user starts the vendor questions")
-      VendorBeforeYouStart.saveAndContinue()
+      VendorBeforeYouStart.clickContinueButton()
       Then("the WhoIsTheVendor page is shown")
       WhoIsTheVendor.verifyPageTitle(WhoIsTheVendor.pageTitle)
 

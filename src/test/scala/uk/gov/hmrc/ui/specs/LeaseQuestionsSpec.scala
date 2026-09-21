@@ -53,7 +53,7 @@ class LeaseQuestionsSpec
       LeaseBeforeYouStart.verifyPageTitle(LeaseBeforeYouStart.pageTitle)
 
       When("the user starts the lease questions")
-      LeaseBeforeYouStart.saveAndContinue()
+      LeaseBeforeYouStart.clickContinueButton()
       Then("the TypeOfLease page is shown")
       TypeOfLease.verifyPageTitle(TypeOfLease.pageTitle)
 
@@ -219,7 +219,7 @@ class LeaseQuestionsSpec
       LeaseBeforeYouStart.verifyPageTitle(LeaseBeforeYouStart.pageTitle)
 
       When("the user starts the lease questions")
-      LeaseBeforeYouStart.saveAndContinue()
+      LeaseBeforeYouStart.clickContinueButton()
       Then("the TypeOfLease page is shown")
       TypeOfLease.verifyPageTitle(TypeOfLease.pageTitle)
 

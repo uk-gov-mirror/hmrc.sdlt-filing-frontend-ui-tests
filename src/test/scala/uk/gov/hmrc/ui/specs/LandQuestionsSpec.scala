@@ -54,7 +54,7 @@ class LandQuestionsSpec
       LandBeforeYouStart.verifyPageTitle(LandBeforeYouStart.pageTitle)
 
       When("the user starts the land questions")
-      LandBeforeYouStart.saveAndContinue()
+      LandBeforeYouStart.clickContinueButton()
       Then("the TypeOfProperty page is shown")
       TypeOfProperty.verifyPageTitle(TypeOfProperty.pageTitle)
 
@@ -78,7 +78,7 @@ class LandQuestionsSpec
       LandAddress.verifyPageTitle(LandAddress.confirmPageTitle)
 
       When("the user confirms the land address")
-      LandAddress.clickContinueButton()
+      LandAddress.clickConfirmAddress()
       Then("the LocalAuthorityCode page is shown")
       LocalAuthorityCode.verifyPageTitle(LocalAuthorityCode.pageTitle)
 
@@ -138,7 +138,7 @@ class LandQuestionsSpec
       LandAddress.verifyPageTitle(LandAddress.editPageTitle)
       LandAddress.enterAddressManually("1 Silver Lane", "Test Town", "ZZ11 1ZZ")
       LandAddress.verifyPageTitle(LandAddress.confirmPageTitle)
-      LandAddress.clickContinueButton()
+      LandAddress.clickConfirmAddress()
       Then("the LandCheckYourAnswers page is shown")
       LandCheckYourAnswers.verifyPageTitle(LandCheckYourAnswers.pageTitle)
 
@@ -191,7 +191,7 @@ class LandQuestionsSpec
       LandBeforeYouStart.verifyPageTitle(LandBeforeYouStart.pageTitle)
 
       When("the user starts the land questions")
-      LandBeforeYouStart.saveAndContinue()
+      LandBeforeYouStart.clickContinueButton()
       Then("the TypeOfProperty page is shown")
       TypeOfProperty.verifyPageTitle(TypeOfProperty.pageTitle)
 
@@ -215,7 +215,7 @@ class LandQuestionsSpec
       LandAddress.verifyPageTitle(LandAddress.confirmPageTitle)
 
       When("the user confirms the land address")
-      LandAddress.clickContinueButton()
+      LandAddress.clickConfirmAddress()
       Then("the LocalAuthorityCode page is shown")
       LocalAuthorityCode.verifyPageTitle(LocalAuthorityCode.pageTitle)
 

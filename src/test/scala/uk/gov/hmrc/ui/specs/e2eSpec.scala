@@ -61,7 +61,7 @@ class e2eSpec
       PreliminaryBeforeYouStart.verifyPageTitle(PreliminaryBeforeYouStart.pageTitle)
 
       When("the user starts the preliminary questions")
-      PreliminaryBeforeYouStart.saveAndContinue()
+      PreliminaryBeforeYouStart.clickContinueButton()
       Then("the PreliminaryWhoIsMakingThePurchase page is shown")
       PreliminaryWhoIsMakingThePurchase.verifyPageTitle(PreliminaryWhoIsMakingThePurchase.pageTitle)
 
@@ -76,7 +76,7 @@ class e2eSpec
         By.id(PreliminaryPurchaserName.companyName),
         PreliminaryPurchaserName.companyNameInput
       )
-      PreliminaryPurchaserName.clickSubmitButton()
+      PreliminaryPurchaserName.saveAndContinue()
       Then("the PreliminaryPropertyAddress page is shown")
       PreliminaryPropertyAddress.verifyPageTitle(PreliminaryPropertyAddress.pageTitle)
 
@@ -88,7 +88,7 @@ class e2eSpec
       PreliminaryPropertyAddress.verifyPageTitle(PreliminaryPropertyAddress.confirmPageTitle)
 
       When("the user confirms the property address")
-      PreliminaryPropertyAddress.clickContinueButton()
+      PreliminaryPropertyAddress.clickConfirmAddress()
       Then("the TransactionType page is shown")
       TransactionType.verifyPageTitle(TransactionType.pageTitle)
 
@@ -110,12 +110,12 @@ class e2eSpec
 
       When("the user adds a new vendor")
       VendorOverview.radioButton(VendorOverview.yes)
-      VendorOverview.saveAndContinue()
+      VendorOverview.clickContinueButton()
       Then("the VendorBeforeYouStart page is shown")
       VendorBeforeYouStart.verifyPageTitle(VendorBeforeYouStart.pageTitle)
 
       When("the user starts the vendor questions")
-      VendorBeforeYouStart.saveAndContinue()
+      VendorBeforeYouStart.clickContinueButton()
       Then("the WhoIsTheVendor page is shown")
       WhoIsTheVendor.verifyPageTitle(WhoIsTheVendor.pageTitle)
 
@@ -148,7 +148,7 @@ class e2eSpec
       VendorPropertyAddress.verifyPageTitle(VendorPropertyAddress.confirmPageTitleBusiness)
 
       When("the user confirms the vendor address")
-      VendorPropertyAddress.clickContinueButton()
+      VendorPropertyAddress.clickConfirmAddress()
       Then("the VendorCheckYourAnswers page is shown")
       VendorCheckYourAnswers.verifyPageTitle(VendorCheckYourAnswers.pageTitle)
 
@@ -159,7 +159,7 @@ class e2eSpec
 
       When("the user does not add another vendor")
       VendorOverview.radioButton(VendorOverview.no)
-      VendorOverview.saveAndContinue()
+      VendorOverview.clickContinueButton()
       Then("the ReturnTaskList page is shown")
       ReturnTaskList.verifyPageTitle(ReturnTaskList.pageTitle)
 
@@ -170,7 +170,7 @@ class e2eSpec
 
       When("the user starts the vendor agent questions")
       VendorAgentBeforeYouStart.radioButton(VendorAgentBeforeYouStart.yes)
-      VendorAgentBeforeYouStart.saveAndContinue()
+      VendorAgentBeforeYouStart.clickContinueButton()
       Then("the VendorAgentName page is shown")
       VendorAgentName.verifyPageTitle(VendorAgentName.pageTitle)
 
@@ -191,7 +191,7 @@ class e2eSpec
       VendorAgentAddress.verifyPageTitle(VendorAgentAddress.confirmPageTitleAgent)
 
       When("the user confirms the vendor agent address")
-      VendorPropertyAddress.clickContinueButton()
+      VendorPropertyAddress.clickConfirmAddress()
       Then("the AddVendorAgentContactDetails page is shown")
       AddVendorAgentContactDetails.verifyPageTitle(AddVendorAgentContactDetails.pageTitle)
 
@@ -225,12 +225,12 @@ class e2eSpec
 
       When("the user adds a new purchaser")
       PurchaserOverview.radioButton(PurchaserOverview.yes)
-      PurchaserOverview.saveAndContinue()
+      PurchaserOverview.clickContinueButton()
       Then("the PurchaserBeforeYouStart page is shown")
       PurchaserBeforeYouStart.verifyPageTitle(PurchaserBeforeYouStart.pageTitle)
 
       When("the user starts the purchaser questions")
-      PurchaserBeforeYouStart.saveAndContinue()
+      PurchaserBeforeYouStart.clickContinueButton()
       Then("the PurchaserWhoIsMakingThePurchase page is shown")
       PurchaserWhoIsMakingThePurchase.verifyPageTitle(PurchaserWhoIsMakingThePurchase.pageTitle)
 
@@ -282,7 +282,7 @@ class e2eSpec
 
       When("the user does not add another purchaser")
       PurchaserOverview.radioButton(PurchaserOverview.no)
-      PurchaserOverview.saveAndContinue()
+      PurchaserOverview.clickContinueButton()
       Then("the ReturnTaskList page is shown")
       ReturnTaskList.verifyPageTitle(ReturnTaskList.pageTitle)
 
@@ -293,7 +293,7 @@ class e2eSpec
 
       When("the user starts the purchaser agent questions")
       PurchaserAgentBeforeYouStart.radioButton(PurchaserAgentBeforeYouStart.yes)
-      PurchaserAgentBeforeYouStart.saveAndContinue()
+      PurchaserAgentBeforeYouStart.clickContinueButton()
       Then("the SelectPurchaserAgent page is shown")
       SelectPurchaserAgent.verifyPageTitle(SelectPurchaserAgent.pageTitle)
 
@@ -335,12 +335,12 @@ class e2eSpec
 
       When("the user adds a new area of land")
       LandOverview.radioButton(LandOverview.yes)
-      LandOverview.saveAndContinue()
+      LandOverview.clickContinueButton()
       Then("the LandBeforeYouStart page is shown")
       LandBeforeYouStart.verifyPageTitle(LandBeforeYouStart.pageTitle)
 
       When("the user starts the land questions")
-      LandBeforeYouStart.saveAndContinue()
+      LandBeforeYouStart.clickContinueButton()
       Then("the TypeOfProperty page is shown")
       TypeOfProperty.verifyPageTitle(TypeOfProperty.pageTitle)
 
@@ -364,7 +364,7 @@ class e2eSpec
       LandAddress.verifyPageTitle(LandAddress.confirmPageTitle)
 
       When("the user confirms the land address")
-      LandAddress.clickContinueButton()
+      LandAddress.clickConfirmAddress()
       Then("the LocalAuthorityCode page is shown")
       LocalAuthorityCode.verifyPageTitle(LocalAuthorityCode.pageTitle)
 
@@ -408,7 +408,7 @@ class e2eSpec
 
       When("the user does not add another land")
       LandOverview.radioButton(LandOverview.no)
-      LandOverview.saveAndContinue()
+      LandOverview.clickContinueButton()
       Then("the ReturnTaskList page is shown")
       ReturnTaskList.verifyPageTitle(ReturnTaskList.pageTitle)
 
@@ -418,7 +418,7 @@ class e2eSpec
       TransactionBeforeYouStart.verifyPageTitle(TransactionBeforeYouStart.pageTitle)
 
       When("the user starts the transaction questions")
-      TransactionBeforeYouStart.saveAndContinue()
+      TransactionBeforeYouStart.clickContinueButton()
       Then("the ConfirmTypeOfTransaction page is shown")
       ConfirmTypeOfTransaction.verifyPageTitle(ConfirmTypeOfTransaction.pageTitle)
 
@@ -600,7 +600,7 @@ class e2eSpec
       UKResidencyBeforeYouStart.verifyPageTitle(UKResidencyBeforeYouStart.pageTitle)
 
       When("the user starts the uk residency questions")
-      UKResidencyBeforeYouStart.saveAndContinue()
+      UKResidencyBeforeYouStart.clickContinueButton()
       Then("the ResidencyStatus page is shown")
       ResidencyStatus.verifyPageTitle(ResidencyStatus.pageTitle)
 
@@ -633,7 +633,7 @@ class e2eSpec
       LeaseBeforeYouStart.verifyPageTitle(LeaseBeforeYouStart.pageTitle)
 
       When("the user starts the lease questions")
-      LeaseBeforeYouStart.saveAndContinue()
+      LeaseBeforeYouStart.clickContinueButton()
       Then("the TypeOfLease page is shown")
       TypeOfLease.verifyPageTitle(TypeOfLease.pageTitle)
 
@@ -766,7 +766,7 @@ class e2eSpec
       ConfirmEffectiveDateOfTransaction.verifyPageTitle(ConfirmEffectiveDateOfTransaction.pageTitle)
 
       When("the user confirms the effective date of the transaction and continues")
-      ConfirmEffectiveDateOfTransaction.saveAndContinue()
+      ConfirmEffectiveDateOfTransaction.clickContinueButton()
       Then("the user is navigated to Is this effective date of transaction page")
       IsThisTheEffectiveDateOfTransaction.verifyPageTitle(IsThisTheEffectiveDateOfTransaction.pageTitle)
 
@@ -777,7 +777,7 @@ class e2eSpec
       TaxCalculationBeforeYouStart.verifyPageTitle(TaxCalculationBeforeYouStart.pageTitle)
 
       When("the user is navigated to sdlt due page")
-      TaxCalculationBeforeYouStart.saveAndContinue()
+      TaxCalculationBeforeYouStart.clickContinueButton()
       Then("the user is navigated to the calculate SDLT due page")
       CalculatedSDLTDue.verifyPageTitle(CalculatedSDLTDue.pageTitle)
 
@@ -792,7 +792,7 @@ class e2eSpec
       CalculatedSDLTDue.verifyPageTitle(CalculatedSDLTDue.pageTitle)
 
       When("the user want to go return to the tax calculation page")
-      CalculatedSDLTDue.saveAndContinue()
+      CalculatedSDLTDue.clickContinueButton()
       Then("user is navigated to what is the SDLT self-assessment page")
       SDLTSelfAssessment.verifyPageTitle(
         SDLTSelfAssessment.pageTitleFreeholdTax
@@ -852,7 +852,7 @@ class e2eSpec
       TaxCalculationCheckYourAnswers.verifyPageTitle(TaxCalculationCheckYourAnswers.pageTitle)
 
       When("the user clicks save and continue button")
-      TaxCalculationCheckYourAnswers.saveAndContinue()
+      TaxCalculationCheckYourAnswers.confirmAndContinue()
       Then("the ReturnTaskList page is shown")
       ReturnTaskList.verifyPageTitle(ReturnTaskList.pageTitle)
     }
@@ -878,7 +878,7 @@ class e2eSpec
       DeclarationAndSubmissionBeforeYouStart.verifyPageTitle(DeclarationAndSubmissionBeforeYouStart.pageTitle)
 
       When("the user starts the submit your return questions")
-      DeclarationAndSubmissionBeforeYouStart.saveAndContinue()
+      DeclarationAndSubmissionBeforeYouStart.clickContinueButton()
       Then("the AddEmailConfirmation page is shown")
       AddEmailConfirmation.verifyPageTitle(AddEmailConfirmation.pageTitle)
 
@@ -901,7 +901,7 @@ class e2eSpec
       DeclarationConfirmation.verifyPageTitle(DeclarationConfirmation.pageTitle)
 
       When("the user has read the declaration and submits their return")
-      DeclarationConfirmation.saveAndContinue()
+      DeclarationConfirmation.confirmAndSubmit()
       Then("the SubmissionComplete page is shown")
       SubmissionComplete.waitForPage()
       SubmissionComplete.verifyPageTitle(SubmissionComplete.pageTitle)

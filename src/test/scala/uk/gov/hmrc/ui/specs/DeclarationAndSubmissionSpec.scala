@@ -61,7 +61,7 @@ class DeclarationAndSubmissionSpec
       YourCompletedSDLTReturn.switchToNewTabAndValidateTitle(YourCompletedSDLTReturn.pageTitle)
 
       When("the user starts the submit your return questions")
-      DeclarationAndSubmissionBeforeYouStart.saveAndContinue()
+      DeclarationAndSubmissionBeforeYouStart.clickContinueButton()
       Then("the AddEmailConfirmation page is shown")
       AddEmailConfirmation.verifyPageTitle(AddEmailConfirmation.pageTitle)
 
@@ -90,7 +90,7 @@ class DeclarationAndSubmissionSpec
       DeclarationConfirmation.verifyPageTitle(DeclarationConfirmation.pageTitle)
 
       When("the user has read the declaration and submits their return")
-      DeclarationConfirmation.saveAndContinue()
+      DeclarationConfirmation.confirmAndSubmit()
     }
 
     Scenario(

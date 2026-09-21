@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2026 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,25 +39,29 @@ trait BasePage extends PageObject with Eventually with Matchers with LazyLogging
 
   /** Locator values */
   object Locators {
-    val btnContinue        = ".govuk-button"
-    val lnkBack            = "Back"
-    val btnSubmit          = ".govuk-button"
-    val continueButton: By = By.cssSelector("#continue")
-    val lnkHeader          = ".govuk-header__link.govuk-header__service-name"
-    val rdoYes             = "#value_0"
-    val rdoNo              = "#value_1"
-    val txtFileName        = ".govuk-body"
-    val paragraphText      = By.ByClassName("govuk-body")
-    val txtBannerTitle     = "#govuk-notification-banner-title"
-    val lnkRemoveFile      = "dd[class='govuk-summary-list__actions'] a[class='govuk-link']"
-    val txtMonth: By       = By.ById("value.month")
-    val txtYear: By        = By.ById("value.year")
-    val txtPostCode: By    = By.ById("postcode")
-    val txtAddress1: By    = By.ById("line1")
-    val txtTown: By        = By.ById("town")
-    val txtAddressPostCode = By.ById("postcode")
-    val lnkAddrManually    = "Enter the address manually"
-    val cbxConfirm         = "#value_0"
+    val btnContinue           = "//*[contains(@class,'govuk-button') and normalize-space()='Continue']"
+    val btnSaveAndContinue    = "//*[contains(@class,'govuk-button') and normalize-space()='Save and continue']"
+    val btnConfirmAndContinue = "//*[contains(@class,'govuk-button') and normalize-space()='Confirm and continue']"
+    val btnConfirmAndSubmit   = "//*[contains(@class,'govuk-button') and normalize-space()='Confirm and submit']"
+    val btnAddPurchaser       = "//*[contains(@class,'govuk-button') and normalize-space()='Add a purchaser']"
+    val btnConfirmAddress     = "continue"
+    val lnkBack               = "Back"
+    val btnSubmit             = ".govuk-button"
+    val lnkHeader             = ".govuk-header__link.govuk-header__service-name"
+    val rdoYes                = "#value_0"
+    val rdoNo                 = "#value_1"
+    val txtFileName           = ".govuk-body"
+    val paragraphText         = By.ByClassName("govuk-body")
+    val txtBannerTitle        = "#govuk-notification-banner-title"
+    val lnkRemoveFile         = "dd[class='govuk-summary-list__actions'] a[class='govuk-link']"
+    val txtMonth: By          = By.ById("value.month")
+    val txtYear: By           = By.ById("value.year")
+    val txtPostCode: By       = By.ById("postcode")
+    val txtAddress1: By       = By.ById("line1")
+    val txtTown: By           = By.ById("town")
+    val txtAddressPostCode    = By.ById("postcode")
+    val lnkAddrManually       = "Enter the address manually"
+    val cbxConfirm            = "#value_0"
   }
 
   def pageUrl: String
@@ -109,13 +113,19 @@ trait BasePage extends PageObject with Eventually with Matchers with LazyLogging
   /** Specific actions */
   def clickSubmitButton(): Unit = click(By.cssSelector(Locators.btnSubmit))
 
-  def clickContinueButton(): Unit = click(Locators.continueButton)
+  def clickContinueButton(): Unit = click(By.xpath(Locators.btnContinue))
 
   def clickBackLink(): Unit = click(By.linkText(Locators.lnkBack))
 
-  def saveAndContinue(): Unit = click(By.cssSelector(Locators.btnContinue))
+  def saveAndContinue(): Unit = click(By.xpath(Locators.btnSaveAndContinue))
 
-  def acceptAndContinue(): Unit = click(By.cssSelector(Locators.btnContinue))
+  def clickConfirmAddress(): Unit = click(By.id(Locators.btnConfirmAddress))
+
+  def confirmAndContinue(): Unit = click(By.xpath(Locators.btnConfirmAndContinue))
+
+  def confirmAndSubmit(): Unit = click(By.xpath(Locators.btnConfirmAndSubmit))
+
+  def clickAddPurchaser(): Unit = click(By.xpath(Locators.btnAddPurchaser))
 
   def header(): Unit = click(By.cssSelector(Locators.lnkHeader))
 
@@ -225,5 +235,4 @@ trait BasePage extends PageObject with Eventually with Matchers with LazyLogging
     )
     println("Actual page text is: " + actualText)
   }
-
 }

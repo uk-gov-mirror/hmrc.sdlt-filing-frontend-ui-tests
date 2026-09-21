@@ -58,7 +58,7 @@ class TaxCalculationsQuestionsSpec
       ConfirmEffectiveDateOfTransaction.verifyPageTitle(ConfirmEffectiveDateOfTransaction.pageTitle)
 
       When("the user confirms the effective date of the transaction and continues")
-      ConfirmEffectiveDateOfTransaction.saveAndContinue()
+      ConfirmEffectiveDateOfTransaction.clickContinueButton()
       Then("the user is navigated to Is this effective date of transaction page")
       IsThisTheEffectiveDateOfTransaction.verifyPageTitle(IsThisTheEffectiveDateOfTransaction.pageTitle)
 
@@ -69,7 +69,7 @@ class TaxCalculationsQuestionsSpec
       TaxCalculationBeforeYouStart.verifyPageTitle(TaxCalculationBeforeYouStart.pageTitle)
 
       When("the user is navigated to sdlt due page")
-      TaxCalculationBeforeYouStart.saveAndContinue()
+      TaxCalculationBeforeYouStart.clickContinueButton()
       Then("the user is navigated to the calculate SDLT due page")
       CalculatedSDLTDue.verifyPageTitle(CalculatedSDLTDue.pageTitle)
 
@@ -84,7 +84,7 @@ class TaxCalculationsQuestionsSpec
       CalculatedSDLTDue.verifyPageTitle(CalculatedSDLTDue.pageTitle)
 
       When("the user want to go return to the tax calculation page")
-      CalculatedSDLTDue.saveAndContinue()
+      CalculatedSDLTDue.clickContinueButton()
       Then("user is navigated to what is the SDLT self-assessment page")
       SDLTSelfAssessment.verifyPageTitle(
         SDLTSelfAssessment.pageTitleFreeholdTax
@@ -144,7 +144,7 @@ class TaxCalculationsQuestionsSpec
       TaxCalculationCheckYourAnswers.verifyPageTitle(TaxCalculationCheckYourAnswers.pageTitle)
 
       When("the user clicks save and continue button")
-      TaxCalculationCheckYourAnswers.saveAndContinue()
+      TaxCalculationCheckYourAnswers.confirmAndContinue()
       Then("the ReturnTaskList page is shown")
       ReturnTaskList.verifyPageTitle(ReturnTaskList.pageTitle)
     }
@@ -168,7 +168,7 @@ class TaxCalculationsQuestionsSpec
 
       When("the confirm effective date of the transaction page displayed")
       ConfirmEffectiveDateOfTransaction.verifyPageTitle(ConfirmEffectiveDateOfTransaction.pageTitle)
-      ConfirmEffectiveDateOfTransaction.saveAndContinue()
+      ConfirmEffectiveDateOfTransaction.clickContinueButton()
       Then("the user is navigated to Is this effective date of transaction page")
       IsThisTheEffectiveDateOfTransaction.verifyPageTitle(IsThisTheEffectiveDateOfTransaction.pageTitle)
 
@@ -179,9 +179,9 @@ class TaxCalculationsQuestionsSpec
       TaxCalculationBeforeYouStart.verifyPageTitle(TaxCalculationBeforeYouStart.pageTitleFreeholdNotCalculated)
 
       When("the user click save and continues")
-      TaxCalculationBeforeYouStart.saveAndContinue()
+      TaxCalculationBeforeYouStart.clickContinueButton()
       CalculatedSDLTDue.verifyPageTitle(CalculatedSDLTDue.freeholdSelfAssesedSDLTDuepageTitle)
-      CalculatedSDLTDue.saveAndContinue()
+      CalculatedSDLTDue.clickContinueButton()
       Then("user is navigated to what is the SDLT self-assessment page")
       SDLTSelfAssessment.verifyPageTitle(
         SDLTSelfAssessment.pageTitleFreeholdSelfAssesed
@@ -241,7 +241,7 @@ class TaxCalculationsQuestionsSpec
       TaxCalculationCheckYourAnswers.verifyPageTitle(TaxCalculationCheckYourAnswers.pageTitle)
 
       When("the user clicks on save and continue button on check your answers page")
-      TaxCalculationCheckYourAnswers.saveAndContinue()
+      TaxCalculationCheckYourAnswers.confirmAndContinue()
       Then("the ReturnTaskList page is shown")
       ReturnTaskList.verifyPageTitle(ReturnTaskList.pageTitle)
     }
@@ -265,7 +265,7 @@ class TaxCalculationsQuestionsSpec
 
       Then("the confirm effective date of the transaction page displayed")
       ConfirmEffectiveDateOfTransaction.verifyPageTitle(ConfirmEffectiveDateOfTransaction.pageTitle)
-      ConfirmEffectiveDateOfTransaction.saveAndContinue()
+      ConfirmEffectiveDateOfTransaction.clickContinueButton()
       Then("the user is navigated to Is this effective date of transaction page")
       IsThisTheEffectiveDateOfTransaction.verifyPageTitle(IsThisTheEffectiveDateOfTransaction.pageTitle)
 
@@ -276,7 +276,7 @@ class TaxCalculationsQuestionsSpec
       TaxCalculationBeforeYouStart.verifyPageTitle(TaxCalculationBeforeYouStart.pageTitleLeaseholdCalculated)
 
       When("the user start sdlt due page")
-      TaxCalculationBeforeYouStart.saveAndContinue()
+      TaxCalculationBeforeYouStart.clickContinueButton()
       Then("the user is navigated to the calculate SDLT due page")
       CalculatedSDLTDue.verifyPageTitle(CalculatedSDLTDue.leaseholdSDLTDuepageTitle)
 
@@ -291,7 +291,7 @@ class TaxCalculationsQuestionsSpec
       CalculatedSDLTDue.verifyPageTitle(CalculatedSDLTDue.leaseholdSDLTDuepageTitle)
 
       When("the user start sdlt self assessment page")
-      CalculatedSDLTDue.saveAndContinue()
+      CalculatedSDLTDue.clickContinueButton()
       Then("user is navigated to what is the SDLT self-assessment page")
       SDLTSelfAssessment.verifyPageTitle(
         SDLTSelfAssessment.pageTitleLeaseholdTax
@@ -353,7 +353,7 @@ class TaxCalculationsQuestionsSpec
       TaxCalculationCheckYourAnswers.verifyPageTitle(TaxCalculationCheckYourAnswers.pageTitle)
 
       When("the user start return task list page")
-      TaxCalculationCheckYourAnswers.saveAndContinue()
+      TaxCalculationCheckYourAnswers.confirmAndContinue()
       Then("the ReturnTaskList page is shown")
       ReturnTaskList.verifyPageTitle(ReturnTaskList.pageTitle)
     }
@@ -376,7 +376,7 @@ class TaxCalculationsQuestionsSpec
 
       Then("the confirm effective date of the transaction page displayed")
       ConfirmEffectiveDateOfTransaction.verifyPageTitle(ConfirmEffectiveDateOfTransaction.pageTitle)
-      ConfirmEffectiveDateOfTransaction.saveAndContinue()
+      ConfirmEffectiveDateOfTransaction.clickContinueButton()
       Then("the user is navigated to Is this effective date of transaction page")
       IsThisTheEffectiveDateOfTransaction.verifyPageTitle(IsThisTheEffectiveDateOfTransaction.pageTitle)
 
@@ -387,12 +387,12 @@ class TaxCalculationsQuestionsSpec
       TaxCalculationBeforeYouStart.verifyPageTitle(TaxCalculationBeforeYouStart.pageTitleLeaseholdNotCalculated)
 
       When("the user start sdlt due page")
-      TaxCalculationBeforeYouStart.saveAndContinue()
+      TaxCalculationBeforeYouStart.clickContinueButton()
       Then("the user is navigated to the calculate SDLT due page")
       CalculatedSDLTDue.verifyPageTitle(CalculatedSDLTDue.leaseholdSelfAssesedSDLTDuepageTitle)
 
       When("the user click save and continue button")
-      SDLTBreakdown.saveAndContinue()
+      CalculatedSDLTDue.clickContinueButton()
       Then("the user is navigated to the total premium value page")
       TaxDueOnTotalPremiumPayable.verifyPageTitle(
         TaxDueOnTotalPremiumPayable.pageTitle
@@ -453,7 +453,7 @@ class TaxCalculationsQuestionsSpec
       TaxCalculationCheckYourAnswers.verifyPageTitle(TaxCalculationCheckYourAnswers.pageTitle)
 
       When("the user start return task list page")
-      TaxCalculationCheckYourAnswers.saveAndContinue()
+      TaxCalculationCheckYourAnswers.confirmAndContinue()
       Then("the ReturnTaskList page is shown")
       ReturnTaskList.verifyPageTitle(ReturnTaskList.pageTitle)
     }
@@ -476,7 +476,7 @@ class TaxCalculationsQuestionsSpec
 
       Then("the confirm effective date of the transaction page displayed")
       ConfirmEffectiveDateOfTransaction.verifyPageTitle(ConfirmEffectiveDateOfTransaction.pageTitle)
-      ConfirmEffectiveDateOfTransaction.saveAndContinue()
+      ConfirmEffectiveDateOfTransaction.clickContinueButton()
       Then("the user is navigated to Is this effective date of transaction page")
       IsThisTheEffectiveDateOfTransaction.verifyPageTitle(IsThisTheEffectiveDateOfTransaction.pageTitle)
 

@@ -59,7 +59,7 @@ class VendorAgentQuestionsSpec
 
       When("the user starts the vendor agent questions")
       VendorAgentBeforeYouStart.radioButton(VendorAgentBeforeYouStart.yes)
-      VendorAgentBeforeYouStart.saveAndContinue()
+      VendorAgentBeforeYouStart.clickContinueButton()
       Then("the VendorAgentName page is shown")
       VendorAgentName.verifyPageTitle(VendorAgentName.pageTitle)
 
@@ -80,7 +80,7 @@ class VendorAgentQuestionsSpec
       VendorAgentAddress.verifyPageTitle(VendorAgentAddress.confirmPageTitleAgent)
 
       When("the user confirms the vendor agent address")
-      VendorPropertyAddress.clickContinueButton()
+      VendorPropertyAddress.clickConfirmAddress()
       Then("the AddVendorAgentContactDetails page is shown")
       AddVendorAgentContactDetails.verifyPageTitle(AddVendorAgentContactDetails.pageTitle)
 
@@ -149,7 +149,7 @@ class VendorAgentQuestionsSpec
 
       When("the user starts the vendor agent questions")
       VendorAgentBeforeYouStart.radioButton(VendorAgentBeforeYouStart.yes)
-      VendorAgentBeforeYouStart.saveAndContinue()
+      VendorAgentBeforeYouStart.clickContinueButton()
       Then("the VendorAgentName page is shown")
       VendorAgentName.verifyPageTitle(VendorAgentName.pageTitle)
 
@@ -170,7 +170,7 @@ class VendorAgentQuestionsSpec
       VendorAgentAddress.verifyPageTitle(VendorAgentAddress.confirmPageTitleAgent)
 
       When("the user confirms the vendor agent address")
-      VendorPropertyAddress.clickContinueButton()
+      VendorPropertyAddress.clickConfirmAddress()
       Then("the AddVendorAgentContactDetails page is shown")
       AddVendorAgentContactDetails.verifyPageTitle(AddVendorAgentContactDetails.pageTitle)
 
@@ -201,7 +201,7 @@ class VendorAgentQuestionsSpec
       VendorAgentAddress.verifyPageTitle(VendorAgentAddress.editPageTitleAgent2)
       VendorAgentAddress.enterAddressManually("123", "TEST", "ZZ11 1ZZ")
       VendorAgentAddress.verifyPageTitle(VendorAgentAddress.confirmPageTitleAgent2)
-      VendorAgentAddress.clickContinueButton()
+      VendorAgentAddress.clickConfirmAddress()
       Then("the VendorAgentCheckYourAnswers page is shown")
       VendorAgentCheckYourAnswers.verifyPageTitle(VendorAgentCheckYourAnswers.pageTitle)
 

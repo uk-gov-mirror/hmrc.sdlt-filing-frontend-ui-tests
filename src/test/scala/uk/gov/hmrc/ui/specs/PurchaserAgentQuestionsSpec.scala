@@ -54,7 +54,7 @@ class PurchaserAgentQuestionsSpec
 
       When("the user starts the purchaser agent questions")
       PurchaserAgentBeforeYouStart.radioButton(PurchaserAgentBeforeYouStart.yes)
-      PurchaserAgentBeforeYouStart.saveAndContinue()
+      PurchaserAgentBeforeYouStart.clickContinueButton()
       Then("the SelectPurchaserAgent page is shown")
       SelectPurchaserAgent.verifyPageTitle(SelectPurchaserAgent.pageTitle)
 
@@ -78,7 +78,7 @@ class PurchaserAgentQuestionsSpec
       PurchaserAgentAddress.verifyPageTitle(PurchaserAgentAddress.confirmPageTitleAgent)
 
       When("the user confirms the purchaser agent address")
-      PurchaserAgentAddress.clickContinueButton()
+      PurchaserAgentAddress.clickConfirmAddress()
       Then("the AddPurchaserAgentContactDetails page is shown")
       AddPurchaserAgentContactDetails.verifyPageTitle(AddPurchaserAgentContactDetails.pageTitle)
 
@@ -130,7 +130,7 @@ class PurchaserAgentQuestionsSpec
       PurchaserAgentAddress.verifyPageTitle(PurchaserAgentAddress.editPageTitleAgent2)
       PurchaserAgentAddress.enterAddressManually("123", "TEST", "ZZ11 1ZZ")
       PurchaserAgentAddress.verifyPageTitle(PurchaserAgentAddress.confirmPageTitleAgent2)
-      PurchaserAgentAddress.clickContinueButton()
+      PurchaserAgentAddress.clickConfirmAddress()
       Then("the PurchaserAgentCheckYourAnswers page is shown")
       PurchaserAgentCheckYourAnswers.verifyPageTitle(PurchaserAgentCheckYourAnswers.pageTitle)
 
@@ -193,7 +193,7 @@ class PurchaserAgentQuestionsSpec
 
       When("the user starts the purchaser agent questions")
       PurchaserAgentBeforeYouStart.radioButton(PurchaserAgentBeforeYouStart.yes)
-      PurchaserAgentBeforeYouStart.saveAndContinue()
+      PurchaserAgentBeforeYouStart.clickContinueButton()
       Then("the SelectPurchaserAgent page is shown")
       SelectPurchaserAgent.verifyPageTitle(SelectPurchaserAgent.pageTitle)
 
