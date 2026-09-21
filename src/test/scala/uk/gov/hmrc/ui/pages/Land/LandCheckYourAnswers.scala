@@ -44,10 +44,10 @@ object LandCheckYourAnswers extends BasePage {
     "a[href='/stamp-duty-land-tax-filing/about-the-land/add-NLPG-UPRN/change']"
 
   val sendingPlanByPost =
-    "a[href='/stamp-duty-land-tax-filing/about-the-land/sending-plan-by-post/change']"
+    "a[href='/stamp-duty-land-tax-filing/about-the-land/sending-a-plan/change']"
 
   val mineralsOrMineralRights =
-    "a[href='/stamp-duty-land-tax-filing/about-the-land/minerals-or-mineral-rights/change']"
+    "a[href='/stamp-duty-land-tax-filing/about-the-land/mineral-rights/change']"
 
   val titleNumber = "a[href='/stamp-duty-land-tax-filing/about-the-land/title-number/change']"
 

@@ -53,7 +53,7 @@ class PurchaserQuestionsSpec
       PurchaserBeforeYouStart.verifyPageTitle(PurchaserBeforeYouStart.pageTitle)
 
       When("the user starts the purchaser questions")
-      PurchaserBeforeYouStart.saveAndContinue()
+      PurchaserBeforeYouStart.clickContinueButton()
       Then("the PurchaserWhoIsMakingThePurchase page is shown")
       PurchaserWhoIsMakingThePurchase.verifyPageTitle(PurchaserWhoIsMakingThePurchase.pageTitle)
 
@@ -94,7 +94,7 @@ class PurchaserQuestionsSpec
       PurchaserAddress.verifyPageTitle(PurchaserAddress.confirmPageTitle)
 
       When("the user confirms the purchaser address")
-      PurchaserAddress.clickContinueButton()
+      PurchaserAddress.clickConfirmAddress()
       Then("the DoesPurchaserHavePhoneNumber page is shown")
       DoesPurchaserHavePhoneNumber.verifyPageTitle(DoesPurchaserHavePhoneNumber.pageTitle)
 
@@ -210,7 +210,7 @@ class PurchaserQuestionsSpec
       PurchaserBeforeYouStart.verifyPageTitle(PurchaserBeforeYouStart.pageTitle)
 
       When("the user starts the purchaser questions")
-      PurchaserBeforeYouStart.saveAndContinue()
+      PurchaserBeforeYouStart.clickContinueButton()
       Then("the PurchaserWhoIsMakingThePurchase page is shown")
       PurchaserWhoIsMakingThePurchase.verifyPageTitle(PurchaserWhoIsMakingThePurchase.pageTitle)
 
@@ -297,7 +297,7 @@ class PurchaserQuestionsSpec
       PurchaserAddress.verifyPageTitle(PurchaserAddress.editPageTitle)
       PurchaserAddress.enterAddressManually("123", "TEST", "ZZ11 1ZZ")
       PurchaserAddress.verifyPageTitle(PurchaserAddress.confirmPageTitle)
-      PurchaserAddress.clickContinueButton()
+      PurchaserAddress.clickConfirmAddress()
       Then("the PurchaserCheckYourAnswers page is shown")
       PurchaserCheckYourAnswers.verifyPageTitle(PurchaserCheckYourAnswers.pageTitle)
 
@@ -349,7 +349,7 @@ class PurchaserQuestionsSpec
 
       When("the user confirms the purchaser removal")
       PurchaserRemove.radioButton(PurchaserRemove.yes)
-      PurchaserOverview.saveAndContinue()
+      PurchaserRemove.clickContinueButton()
       Then("the PurchaserOverview page is shown")
       PurchaserOverview.verifyPageTitle(PurchaserOverview.pageTitle)
 
@@ -377,12 +377,12 @@ class PurchaserQuestionsSpec
 
       When("the user adds a new purchaser")
       PurchaserOverview.radioButton(PurchaserOverview.yes)
-      PurchaserOverview.saveAndContinue()
+      PurchaserOverview.clickContinueButton()
       Then("the PurchaserBeforeYouStart page is shown")
       PurchaserBeforeYouStart.verifyPageTitle(PurchaserBeforeYouStart.pageTitle)
 
       When("the user starts the purchaser questions")
-      PurchaserBeforeYouStart.saveAndContinue()
+      PurchaserBeforeYouStart.clickContinueButton()
       Then("the PurchaserWhoIsMakingThePurchase page is shown")
       PurchaserWhoIsMakingThePurchase.verifyPageTitle(PurchaserWhoIsMakingThePurchase.pageTitle)
 
@@ -452,7 +452,7 @@ class PurchaserQuestionsSpec
       PurchaserBeforeYouStart.verifyPageTitle(PurchaserBeforeYouStart.pageTitle)
 
       When("the user starts the purchaser questions")
-      PurchaserBeforeYouStart.saveAndContinue()
+      PurchaserBeforeYouStart.clickContinueButton()
       Then("the PurchaserWhoIsMakingThePurchase page is shown")
       PurchaserWhoIsMakingThePurchase.verifyPageTitle(PurchaserWhoIsMakingThePurchase.pageTitle)
 
@@ -630,7 +630,7 @@ class PurchaserQuestionsSpec
       Then("the PurchaserOverview page is shown")
       PurchaserOverview.verifyPageTitle(PurchaserOverview.pageTitle)
       When("the user adds a new purchaser")
-      PurchaserOverview.saveAndContinue()
+      PurchaserOverview.clickAddPurchaser()
       Then("the PurchaserBeforeYouStart page is shown")
       PurchaserBeforeYouStart.verifyPageTitle(PurchaserBeforeYouStart.pageTitle)
     }
@@ -649,13 +649,13 @@ class PurchaserQuestionsSpec
       PurchaserBeforeYouStart.verifyPageTitle(PurchaserBeforeYouStart.pageTitle)
 
       When("the user starts the purchaser questions")
-      PurchaserBeforeYouStart.saveAndContinue()
+      PurchaserBeforeYouStart.clickContinueButton()
       Then("the ConfirmPurchaserName page is shown")
       ConfirmPurchaserName.verifyPageTitle(ConfirmPurchaserName.pageTitle)
 
       When("the user confirms the purchaser name")
       ConfirmPurchaserName.radioButton(ConfirmPurchaserName.yes)
-      ConfirmPurchaserName.saveAndContinue()
+      ConfirmPurchaserName.clickContinueButton()
       Then("the ConfirmPurchaserAddress page is shown")
       PurchaserConfirmAddress.verifyPageTitle(PurchaserConfirmAddress.pageTitle)
 

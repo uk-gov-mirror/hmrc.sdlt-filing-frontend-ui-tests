@@ -50,7 +50,7 @@ class PreliminaryQuestionsSpec
       PreliminaryBeforeYouStart.verifyPageTitle(PreliminaryBeforeYouStart.pageTitle)
 
       When("the user starts the preliminary questions")
-      PreliminaryBeforeYouStart.saveAndContinue()
+      PreliminaryBeforeYouStart.clickContinueButton()
       Then("the PreliminaryWhoIsMakingThePurchase page is shown")
       PreliminaryWhoIsMakingThePurchase.verifyPageTitle(PreliminaryWhoIsMakingThePurchase.pageTitle)
 
@@ -65,7 +65,7 @@ class PreliminaryQuestionsSpec
         By.id(PreliminaryPurchaserName.companyName),
         PreliminaryPurchaserName.companyNameInput
       )
-      PreliminaryPurchaserName.clickSubmitButton()
+      PreliminaryPurchaserName.saveAndContinue()
       Then("the PreliminaryPropertyAddress page is shown")
       PreliminaryPropertyAddress.verifyPageTitle(PreliminaryPropertyAddress.pageTitle)
 
@@ -77,7 +77,7 @@ class PreliminaryQuestionsSpec
       PreliminaryPropertyAddress.verifyPageTitle(PreliminaryPropertyAddress.confirmPageTitle)
 
       When("the user confirms the property address")
-      PreliminaryPropertyAddress.clickContinueButton()
+      PreliminaryPropertyAddress.clickConfirmAddress()
       Then("the TransactionType page is shown")
       TransactionType.verifyPageTitle(TransactionType.pageTitle)
 
@@ -120,7 +120,7 @@ class PreliminaryQuestionsSpec
       PreliminaryBeforeYouStart.verifyPageTitle(PreliminaryBeforeYouStart.pageTitle)
 
       When("the user starts the preliminary questions")
-      PreliminaryBeforeYouStart.saveAndContinue()
+      PreliminaryBeforeYouStart.clickContinueButton()
       Then("the PreliminaryWhoIsMakingThePurchase page is shown")
       PreliminaryWhoIsMakingThePurchase.verifyPageTitle(PreliminaryWhoIsMakingThePurchase.pageTitle)
 
@@ -135,7 +135,7 @@ class PreliminaryQuestionsSpec
         By.id(PreliminaryPurchaserName.purchasersSurname),
         PreliminaryPurchaserName.purchasersSurnameInput
       )
-      PreliminaryPurchaserName.clickSubmitButton()
+      PreliminaryPurchaserName.saveAndContinue()
       Then("the PreliminaryPropertyAddress page is shown")
       PreliminaryPropertyAddress.verifyPageTitle(PreliminaryPropertyAddress.pageTitle)
 
@@ -147,7 +147,7 @@ class PreliminaryQuestionsSpec
       PreliminaryPropertyAddress.verifyPageTitle(PreliminaryPropertyAddress.confirmPageTitle)
 
       When("the user confirms the property address")
-      PreliminaryPropertyAddress.clickContinueButton()
+      PreliminaryPropertyAddress.clickConfirmAddress()
       Then("the TransactionType page is shown")
       TransactionType.verifyPageTitle(TransactionType.pageTitle)
 
@@ -164,7 +164,7 @@ class PreliminaryQuestionsSpec
         By.id(PreliminaryPurchaserName.purchasersSurname),
         PreliminaryPurchaserName.purchasersSurnameCYAInput
       )
-      PreliminaryPurchaserName.clickSubmitButton()
+      PreliminaryPurchaserName.saveAndContinue()
       Then("the PreliminaryCheckYourAnswers page is shown")
       PreliminaryCheckYourAnswers.verifyPageTitle(PreliminaryCheckYourAnswers.pageTitle)
 
@@ -175,7 +175,7 @@ class PreliminaryQuestionsSpec
       PreliminaryPropertyAddress.verifyPageTitle(PreliminaryPropertyAddress.editPageTitle)
       PreliminaryPropertyAddress.enterAddressManually("523", "AGC", "TE11 1TS")
       PreliminaryPropertyAddress.verifyPageTitle(PreliminaryPropertyAddress.confirmPageTitle)
-      PreliminaryPropertyAddress.clickContinueButton()
+      PreliminaryPropertyAddress.clickConfirmAddress()
       Then("the PreliminaryCheckYourAnswers page is shown")
       PreliminaryCheckYourAnswers.verifyPageTitle(PreliminaryCheckYourAnswers.pageTitle)
     }

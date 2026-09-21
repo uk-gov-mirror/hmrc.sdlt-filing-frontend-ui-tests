@@ -33,5 +33,5 @@ object SendingAPlan extends BasePage {
   def clickDropdownText(): Unit = driver.findElement(By.cssSelector("summary.govuk-details__summary")).click()
 
   def dropdownText: String =
-    "The plan should indicate the scale used or be endorsed as ‘Not to Scale’. It must also show the return’s reference number, a description of the land and the local authority code."
+    "You can send a plan by post or email."
 }

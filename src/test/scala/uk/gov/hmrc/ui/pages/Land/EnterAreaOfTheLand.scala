@@ -26,9 +26,9 @@ object EnterAreaOfTheLand extends BasePage {
   override def pageTitle: String = "What is the area of land? - About the land - Stamp Taxes Online - GOV.UK"
 
   val headerSquareMetre: By =
-    By.xpath("""//label[normalize-space(.)='What is the area of the land in square metres?']""")
+    By.xpath("""//label[normalize-space(.)='What is the area of land in square metres?']""")
 
-  val headerHectares: By = By.xpath("""//label[normalize-space(.)='What is the area of the land in hectares?']""")
+  val headerHectares: By = By.xpath("""//label[normalize-space(.)='What is the area of land in hectares?']""")
 
   val area: String = "value"
 

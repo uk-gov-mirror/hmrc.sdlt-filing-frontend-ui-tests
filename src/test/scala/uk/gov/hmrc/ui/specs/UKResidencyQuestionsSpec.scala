@@ -56,7 +56,7 @@ class UKResidencyQuestionsSpec
       UKResidencyBeforeYouStart.verifyPageTitle(UKResidencyBeforeYouStart.pageTitle)
 
       When("the user starts the uk residency questions journey")
-      UKResidencyBeforeYouStart.saveAndContinue()
+      UKResidencyBeforeYouStart.clickContinueButton()
       Then("the ResidencyStatus page is shown")
       ResidencyStatus.verifyPageTitle(ResidencyStatus.pageTitle)
       ResidencyStatus.clickResidencyStatusLink()
@@ -111,7 +111,7 @@ class UKResidencyQuestionsSpec
       UKResidencyBeforeYouStart.verifyPageTitle(UKResidencyBeforeYouStart.pageTitle)
 
       When("the user starts the uk residency questions journey")
-      UKResidencyBeforeYouStart.saveAndContinue()
+      UKResidencyBeforeYouStart.clickContinueButton()
       Then("the ResidencyStatus page is shown")
       ResidencyStatus.verifyPageTitle(ResidencyStatus.pageTitle)
 
