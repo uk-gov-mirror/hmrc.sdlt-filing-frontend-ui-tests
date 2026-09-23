@@ -58,7 +58,9 @@ class DeclarationAndSubmissionSpec
       When("the user views their completed sdlt return")
       DeclarationAndSubmissionBeforeYouStart.click(DeclarationAndSubmissionBeforeYouStart.viewAndPrintThisReturnLink)
       Then("the YourCompletedSDLTReturn page is shown")
-      YourCompletedSDLTReturn.switchToNewTabAndValidateTitle(YourCompletedSDLTReturn.pageTitle)
+      YourCompletedSDLTReturn.verifyPageTitle(YourCompletedSDLTReturn.pageTitle)
+      YourCompletedSDLTReturn.clickBackLink()
+      DeclarationAndSubmissionBeforeYouStart.verifyPageTitle(DeclarationAndSubmissionBeforeYouStart.pageTitle)
 
       When("the user starts the submit your return questions")
       DeclarationAndSubmissionBeforeYouStart.clickContinueButton()

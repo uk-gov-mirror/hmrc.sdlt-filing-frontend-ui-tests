@@ -27,6 +27,6 @@ object DeclarationAndSubmissionBeforeYouStart extends BasePage {
     "Your return is ready for submission - Submit your return - Stamp Taxes Online - GOV.UK"
 
   val viewAndPrintThisReturnLink: By = By.xpath(
-    "//a[contains(text(),'view and print this return for your client’s approval before submitting (opens in new tab)')]"
+    "//a[contains(text(),'view and print this return for your client’s approval before submitting')]"
   )
 }
